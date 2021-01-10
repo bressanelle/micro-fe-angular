@@ -123,6 +123,248 @@
           }
         }
       }
+    },
+    "microapp1": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/microapp1",
+      "sourceRoot": "projects/microapp1/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/microapp1",
+            "index": "projects/microapp1/src/index.html",
+            "main": "projects/microapp1/src/main.ts",
+            "polyfills": "projects/microapp1/src/polyfills.ts",
+            "tsConfig": "projects/microapp1/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/microapp1/src/favicon.ico",
+              "projects/microapp1/src/assets"
+            ],
+            "styles": [
+              "projects/microapp1/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/microapp1/src/environments/environment.ts",
+                  "with": "projects/microapp1/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "microapp1:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "microapp1:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "microapp1:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/microapp1/src/test.ts",
+            "polyfills": "projects/microapp1/src/polyfills.ts",
+            "tsConfig": "projects/microapp1/tsconfig.spec.json",
+            "karmaConfig": "projects/microapp1/karma.conf.js",
+            "assets": [
+              "projects/microapp1/src/favicon.ico",
+              "projects/microapp1/src/assets"
+            ],
+            "styles": [
+              "projects/microapp1/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/microapp1/tsconfig.app.json",
+              "projects/microapp1/tsconfig.spec.json",
+              "projects/microapp1/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/microapp1/e2e/protractor.conf.js",
+            "devServerTarget": "microapp1:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "microapp1:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "microapp2": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/microapp2",
+      "sourceRoot": "projects/microapp2/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/microapp2",
+            "index": "projects/microapp2/src/index.html",
+            "main": "projects/microapp2/src/main.ts",
+            "polyfills": "projects/microapp2/src/polyfills.ts",
+            "tsConfig": "projects/microapp2/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/microapp2/src/favicon.ico",
+              "projects/microapp2/src/assets"
+            ],
+            "styles": [
+              "projects/microapp2/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/microapp2/src/environments/environment.ts",
+                  "with": "projects/microapp2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "microapp2:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "microapp2:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "microapp2:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/microapp2/src/test.ts",
+            "polyfills": "projects/microapp2/src/polyfills.ts",
+            "tsConfig": "projects/microapp2/tsconfig.spec.json",
+            "karmaConfig": "projects/microapp2/karma.conf.js",
+            "assets": [
+              "projects/microapp2/src/favicon.ico",
+              "projects/microapp2/src/assets"
+            ],
+            "styles": [
+              "projects/microapp2/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/microapp2/tsconfig.app.json",
+              "projects/microapp2/tsconfig.spec.json",
+              "projects/microapp2/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/microapp2/e2e/protractor.conf.js",
+            "devServerTarget": "microapp2:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "microapp2:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "micro-fe-angular"
 }
