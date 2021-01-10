@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:microapp1":"ng build --prod --single-bundle --project microapp1 --output-hashing none",
+    "build:microapp2":"ng build --prod --single-bundle --project microapp2 --output-hashing none"
   },
   "private": true,
   "dependencies": {
